@@ -134,7 +134,7 @@ public class Server {
                     if (clients.containsKey(username) && clients.get(username).isPasswordValid(password)) {
                         String secret = jsonObj.get("secret").getAsString();
 
-                        // when user tries to move a sensor: check if he / she is the Chief Sensor Users
+                        // when user tries to send secrets: check if he / she is the Chief
                         if (!secret.isEmpty()) {
                             if (clients.get(username).isChief()) {
                                 System.out.printf("%s, %s; a secret message is sent to server.\n",
